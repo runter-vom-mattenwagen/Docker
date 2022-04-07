@@ -7,7 +7,7 @@ This configuration creates Traefik as a self-configuring reverse proxy for Docke
 
 ### Creating user
 
-The admin account is stored in vol_conf/users and made available to traefik via the correspondending rule in docker-compose.yml.
+The admin account is stored in vol_conf/users and made available to traefik via the correspondending label in docker-compose.yml.
 
 To add or update the credentials, use htpasswd which is part of apache2-utils.
 
