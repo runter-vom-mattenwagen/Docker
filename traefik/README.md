@@ -40,7 +40,7 @@ Responsible for how Traefik handles a container are labels that are set when the
       - traefik.http.services.<SERVICE_NAME>.loadbalancer.server.port=80
 ```
 
-This means: The URL https://myhost.domain.local leads to container <SERVICE_NAME>:80
+This means: The URL https://myhost.domain.local leads to the container on port 80. 
 
 This requires an exlusive hostname for each service. If a service is to be accessed via a subdirectory, the path must be appended to the rule: 
 
