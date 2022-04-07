@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  nginx:
+    build: image/
+    image: my/tinyweb
+    container_name: tinyweb
+    volumes:
+      - ./www-data:/www-data/
+    restart: unless-stopped
+    labels:
+      - traefik.http.routers.tinyweb.entrypoints=https
+      - traefik.http.routers.tinyweb.tls=true
+      - traefik.http.routers.tinyweb.rule=Host(`${VIRTUAL_HOSTNAME}`)
+      - traefik.http.services.tinyweb.loadbalancer.server.port=80
+    networks:
+      MyNetwork:
+
+networks:
+  MyNetwork:
+    external: true
